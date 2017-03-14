@@ -1,0 +1,13 @@
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+.idea/
+*~
+*.swp
+*.swo
+vendor/
+node_modules/
+src/config/config.local.js
+npm-debug.log*
+js/bundle.js
