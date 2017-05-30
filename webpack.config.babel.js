@@ -5,7 +5,7 @@ import webpack from 'webpack';
 export default {
   entry: './src/app.js',
   output: {
-    path: './js',
+    path: path.resolve(__dirname, 'js'),
     filename: 'bundle.js'
   },
   resolve: {
