@@ -1,4 +1,4 @@
-import { BaseCtrl } from './BaseCtrl';
+import { BaseCtrl } from './AppComponent';
 
 class SampleCtrl extends BaseCtrl {
   constructor($cookies) {

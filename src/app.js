@@ -5,7 +5,7 @@ import 'angular-animate';
 import 'angular-cookies';
 import routing from './config/routing';
 
-import myApp from './components/BaseCtrl';
+import myApp from './components/AppComponent';
 import index from './components/IndexComponent';
 import sample from './components/SampleComponent';
 
