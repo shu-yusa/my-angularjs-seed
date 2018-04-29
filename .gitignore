@@ -10,4 +10,4 @@ vendor/
 node_modules/
 src/config/config.local.js
 npm-debug.log*
-js/bundle.js
+js/*bundle.js
