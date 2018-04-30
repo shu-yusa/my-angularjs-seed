@@ -2,7 +2,6 @@
 import angular from 'angular';
 import 'angular-route';
 import 'angular-animate';
-import 'angular-cookies';
 import routing from './config/routing';
 
 import myApp from './components/AppComponent';
@@ -14,7 +13,6 @@ import ExceptionHandlerFactory from './factory/exceptionHandlerFactory';
 export const app = angular.module('app', [
   'ngRoute',
   'ngAnimate',
-  'ngCookies'
 ]).config(routing).
     factory('$exceptionHandler', ExceptionHandlerFactory).
     component('index', index).

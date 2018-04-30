@@ -5,9 +5,7 @@ export class BaseCtrl {
 
 export default {
   bindings: {},
-  template: `
-    <div data-ng-view></div>
-  `,
-  controller: BaseCtrl
+  templateUrl: 'partials/app.html',
+  controller: [BaseCtrl],
 };
 

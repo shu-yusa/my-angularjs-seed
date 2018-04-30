@@ -16,6 +16,6 @@ class IndexCtrl extends BaseCtrl {
 export default {
   bindings: {},
   templateUrl: 'partials/index.html',
-  controller: IndexCtrl
+  controller: [IndexCtrl]
 };
 

@@ -1,10 +1,9 @@
 import { BaseCtrl } from './AppComponent';
 
 class SampleCtrl extends BaseCtrl {
-  constructor($cookies) {
+  constructor() {
     super();
     // dependency injection
-    this.$cookies = $cookies;
     this.name = "foo";
   }
 
@@ -21,6 +20,6 @@ export default {
   template: `
     <h1>Hello {{ $ctrl.name }}!</h1>
   `,
-  controller: ['$cookies', SampleCtrl]
+  controller: [SampleCtrl]
 };
 

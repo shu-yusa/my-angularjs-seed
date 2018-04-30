@@ -11,7 +11,6 @@
   "dependencies": {
     "angular": "^1.6.10",
     "angular-animate": "^1.6.10",
-    "angular-cookies": "^1.6.10",
     "angular-route": "^1.6.10",
     "angular-touch": "^1.6.10",
     "babel-cli": "^6.26.0",
