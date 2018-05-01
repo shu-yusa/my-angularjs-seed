@@ -1,4 +1,3 @@
-import { requestHost } from '../config/config.local';
 import { HttpResult } from '../models/HttpResult';
 
 /**
@@ -10,6 +9,10 @@ export default class HttpService {
     this.$localtion = $location;
     this.defaultHeaders = {
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      'X-Requested-With': 'XMLHttpRequest'
+    };
+    this.jsonHeaders = {
+      'Content-Type': 'application/json; charset=UTF-8',
       'X-Requested-With': 'XMLHttpRequest'
     };
     this.defaultTimeout = 10000;
@@ -59,11 +62,13 @@ export default class HttpService {
   createRequest(method, path, headers, data, opt) {
     let request = {
       method: method,
-      url: requestHost + path,
+      url: this.host + path,
       timeout: this.defaultTimeout
     };
     if (headers) {
       request.headers = headers;
+    } else {
+      request.headers = this.defaultHeaders;
     }
     if (data) {
       request.data = data;
