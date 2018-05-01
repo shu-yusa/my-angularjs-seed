@@ -1,20 +1,24 @@
 import { requestHost } from '../config/config.local';
+import { HttpResult } from '../models/HttpResult';
 
 /**
  * Base class for services using http
  */
 export default class HttpService {
-  constructor($http) {
+  constructor($http, $location) {
     this.$http = $http;
+    this.$localtion = $location;
     this.defaultHeaders = {
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
       'X-Requested-With': 'XMLHttpRequest'
     };
     this.defaultTimeout = 10000;
+
+    this.host = this.$location.protocol() + '://' + this.$location.host();
   }
 
   static get $inject() {
-    return ['$http'];
+    return ['$http', '$location'];
   }
 
   /**
@@ -36,6 +40,12 @@ export default class HttpService {
           errors.push(error);
           return Promise.reject(errors);
         });
+  }
+
+  /**
+   */
+  getMethod(path, params) {
+    return this.request('GET', '/' + path, '', this.defaultHeaders, null);
   }
 
   /**
